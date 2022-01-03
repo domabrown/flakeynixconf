@@ -19,6 +19,19 @@
     userName = "Dom Brown";
     };
 
+  # Fish
+  programs.fish = {
+    enable = true;
+    };
+
+  programs.bat.enable = true;
+
+  programs.dircolors = {
+    enable = true;
+    enableFishIntegration = true;
+    };
+
+  
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
