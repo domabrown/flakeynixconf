@@ -1,5 +1,5 @@
 {
-  description = "Dom's Home Config";
+  description = "Dom's Polar Config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -11,7 +11,7 @@
 
   outputs = { home-manager, nixpkgs, flake-utils,  daedalus, ... }: {
     nixosConfigurations = {
-      hyrax = nixpkgs.lib.nixosSystem {
+      polar = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix

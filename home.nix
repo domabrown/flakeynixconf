@@ -16,7 +16,7 @@
     delta.enable = true;
 
     userEmail = "dom-doi@live.co.uk";
-    userName = "Dom Brown";
+    userName = "domabrown";
     };
 
   # Fish
@@ -41,5 +41,5 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.05";
+  home.stateVersion = "22.05";
 }
