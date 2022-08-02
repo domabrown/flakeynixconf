@@ -30,7 +30,10 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.utf8";
-
+  i18n.supportedLocales = [
+  "en_GB.UTF-8/UTF-8"
+];
+  
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -38,11 +41,25 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # Enabeke Nvidia drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  
   # Configure keymap in X11
   services.xserver = {
     layout = "gb";
     xkbVariant = "";
   };
+  # daedalus wallet cache test
+  nix.settings.substituters = [
+  "https://cache.nixos.org"
+  "https://hydra.iohk.io"
+  "https://iohk.cachix.org"
+  
+];
+  nix.settings.trusted-public-keys = [
+  "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+  "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
+];
 
   # Configure console keymap
   console.keyMap = "uk";
@@ -80,6 +97,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Allow broken packages
+  nixpkgs.config.allowBroken = true; 
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -90,7 +110,11 @@
     google-chrome
     emacs
     git
+    quasselClient
+    spotify
+    tor-browser-bundle-bin
     fish
+    btop
     ghc ghcid cabal-install stack hlint
     home-manager 
   ];

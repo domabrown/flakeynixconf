@@ -11,16 +11,15 @@
 
   outputs = { home-manager, nixpkgs, flake-utils,  daedalus, ... }: {
     nixosConfigurations = {
-      polar = nixpkgs.lib.nixosSystem {
+       polar = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
-	  daedalus.nixosModules.x86_64-linux.daedalus
+	        daedalus.nixosModules.x86_64-linux.daedalus
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.dom = import ./home.nix;
           }
         ];
       };
