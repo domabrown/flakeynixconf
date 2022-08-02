@@ -112,6 +112,7 @@
     git
     quasselClient
     spotify
+    bat
     tor-browser-bundle-bin
     fish
     btop
