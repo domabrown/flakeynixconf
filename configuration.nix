@@ -27,7 +27,6 @@
   # tailscale
   services.tailscale.enable = true;
 
-
   networking.useDHCP = false; # The global useDHCP flag is deprecated
   networking.interfaces.wlp1s0.useDHCP = true;
   
@@ -91,23 +90,18 @@
   # $ nix search wget
     nixpkgs.config.allowUnfree = true; # allow unfree shit 
     environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     vim emacs vscode
      wget
      home-manager
-     emacs
-     htop
+     htop btop
      protonvpn-gui
      devilutionx
      lm_sensors # hardware reading (temp etc)
-     firefox
-     tor-browser-bundle-bin
-     google-chrome
-     chromium
+     google-chrome chromium firefox tor-browser-bundle-bin
      spotify
      git
      fish
      quasselClient
-     vscode
      whatsapp-for-linux
      ghc ghcid cabal-install stack hlint
    ];
